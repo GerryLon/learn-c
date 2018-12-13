@@ -1,3 +1,4 @@
+#include "my_string.h"
 #include "my_string_test.h"
 
 int test_my_strlen() {

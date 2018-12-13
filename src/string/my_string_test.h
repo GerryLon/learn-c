@@ -2,7 +2,6 @@
 #define _MY_STRING_TEST_H 1
 
 #include <string.h>
-#include "my_string.h"
 
 int test_my_strlen();
 int test_my_strcmp();

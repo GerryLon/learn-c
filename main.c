@@ -1,6 +1,7 @@
 #include "src/common/common.h"
 #include "src/string/my_string_test.h"
 #include "src/common/common_test.h"
+#include "src/fptr/fprt_test.h"
 
 void test() {
     char *pc = (char*)malloc(6);
@@ -13,6 +14,7 @@ void test() {
 int main() {
     test_my_string();
     test_common();
+    test_fptr();
 
     return 0;
 }
