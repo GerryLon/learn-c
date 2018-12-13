@@ -42,7 +42,9 @@ int test_getLine() {
 }
 
 int test_common() {
+    printf("------- %s() start -------\n", __func__);
     test_safeFree();
-    test_getLine();
+    printf("------- %s() end -------\n\n", __func__);
+    // test_getLine();
     return 0;
 }

@@ -69,6 +69,8 @@ int test_calc() {
 }
 
 int test_fptr() {
+    printf("------- %s() start -------\n", __func__);
     test_calc();
+    printf("------- %s() end -------\n\n", __func__);
     return 0;
 }

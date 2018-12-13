@@ -46,6 +46,7 @@ char* getLine(void) {
 
             // 指向新申请的内存, 偏移之前读入的所有字符的长度
             currPos = newBuffer + (currPos - buffer);
+            buffer = newBuffer;
         }
         *currPos++ = ch;
     }

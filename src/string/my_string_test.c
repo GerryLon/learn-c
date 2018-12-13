@@ -63,11 +63,30 @@ int test_my_strcat() {
     return 0;
 }
 
+int test_my_strtrim() {
+    char* s = "  a b ";
+    char* s2 = my_strtrim(s);
+
+    if (strcmp("a b", s2) != 0) {
+        printf("test_my_strtrim() err\n");
+        safeFree(s2);
+        return -1;
+    } else {
+        printf("test_my_strtrim() ok\n");
+        safeFree(s2);
+    }
+
+    return 0;
+}
+
 int test_my_string() {
+    printf("------- %s() start -------\n", __func__);
     test_my_strlen();
     test_my_strcmp();
     test_my_strcpy();
     test_my_strcat();
+    test_my_strtrim();
+    printf("------- %s() end -------\n\n", __func__);
 
     return 0;
 }

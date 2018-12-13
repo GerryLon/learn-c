@@ -68,3 +68,51 @@ int my_strcmp(const char* s1, const char* s2) {
         return 0;
     }
 }
+
+int my_isspace(char c) {
+    if (c == ' ' || c == '\t' || c == '\f' || c == '\r' || c == '\n' || c == '\v') {
+        return 1;
+    }
+    return 0;
+}
+
+/**
+ * 记得在外边释放返回的指针
+ */
+char* my_strtrim(char* s) {
+    if (s == NULL) {
+        return NULL;
+    }
+    int i = 0;
+    int finalLen = 0;
+
+    char* _s1 = s;
+    int len = my_strlen(s);
+    char* _s2 = s;
+    _s2 += len - 1;
+
+    while (my_isspace(*_s1) && _s1 < _s2) {
+        _s1++;
+    }
+
+    while (my_isspace(*_s2) && _s1 < _s2) {
+        _s2--;
+    }
+
+    // trimmed string's length
+    finalLen = _s2 - _s1 + 1;
+
+    char* ret = (char*)malloc(finalLen + 1);
+
+    if (ret == NULL) {
+        printf("my_strtrim() malloc() err\n");
+        return NULL;
+    }
+
+    for (i = 0; i < finalLen; i++) {
+        *(ret + i) = *(_s1 + i);
+    }
+    *(ret + finalLen + 1) = '\0';
+
+    return ret;
+}

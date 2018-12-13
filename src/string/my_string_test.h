@@ -7,6 +7,7 @@ int test_my_strlen();
 int test_my_strcmp();
 int test_my_strcpy();
 int test_my_strcat();
+int test_my_strtrim();
 
 int test_my_string();
 
