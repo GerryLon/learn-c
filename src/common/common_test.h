@@ -3,6 +3,8 @@
 
 
 int test_safeFree();
+int test_getLine();
+
 int test_common();
 
 #endif

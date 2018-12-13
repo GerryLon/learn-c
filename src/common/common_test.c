@@ -24,7 +24,25 @@ int test_safeFree() {
     return 0;
 }
 
+int test_getLine() {
+    printf("please input \"abc\": ");
+    char* line = getLine();
+    printf("what you input is: %s\n", line);
+
+    // input abc
+    if (strcmp(line, "abc") != 0) {
+        printf("test_getLine() err\n");
+        return -1;
+    } else {
+        printf("test_getLine() ok\n");
+    }
+
+    safeFree(line);
+    return 0;
+}
+
 int test_common() {
     test_safeFree();
+    test_getLine();
     return 0;
 }

@@ -11,4 +11,12 @@ void _safeFree(void** p);
 
 #define safeFree(p) _safeFree((void**)(&p))
 
+// input
+
+/**
+ * get a line from std input
+ * you should free returned pointer
+ */
+char* getLine(void);
+// end input
 #endif // COMMON_H_INCLUDED

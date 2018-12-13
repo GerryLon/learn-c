@@ -12,8 +12,8 @@ void test() {
 }
 
 int main() {
-    test_my_string();
     test_common();
+    test_my_string();
     test_fptr();
 
     return 0;
