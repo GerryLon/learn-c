@@ -69,6 +69,67 @@ int my_strcmp(const char* s1, const char* s2) {
     }
 }
 
+// simulate tolower()
+// remember to free
+char* my_tolower(const char* s) {
+    int len = my_strlen(s);
+    // int i = 0;
+    const char* _s = s;
+
+    char* ret = (char*)malloc(len + 1);
+    char* _ret = ret;
+
+    if (ret == NULL) {
+        printf("%s() malloc() err\n", __func__);
+        return NULL;
+    }
+
+    while (*_s != '\0') {
+        if (*_s >= 'A' && *_s <= 'Z') {
+            *_ret = *_s + 32;
+        } else {
+            *_ret = *_s;
+        }
+
+        _ret++;
+        _s++;
+    }
+    *_ret = '\0';
+
+    return ret;
+}
+
+// toupper
+// remember to free
+char* my_toupper(const char* s) {
+    int len = my_strlen(s);
+    // int i = 0;
+    const char* _s = s;
+
+    char* ret = (char*)malloc(len + 1);
+    char* _ret = ret;
+
+    if (ret == NULL) {
+        printf("%s() malloc() err\n", __func__);
+        return NULL;
+    }
+
+    while (*_s != '\0') {
+        if (*_s >= 'a' && *_s <= 'z') {
+            *_ret = *_s - 32;
+        } else {
+            *_ret = *_s;
+        }
+
+        _ret++;
+        _s++;
+    }
+    *_ret = '\0';
+
+    return ret;
+}
+
+
 int my_isspace(char c) {
     if (c == ' ' || c == '\t' || c == '\f' || c == '\r' || c == '\n' || c == '\v') {
         return 1;

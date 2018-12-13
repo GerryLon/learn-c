@@ -79,6 +79,38 @@ int test_my_strtrim() {
     return 0;
 }
 
+int test_my_tolower() {
+    const char* s = "Hello World!";
+    char* s2 = my_tolower(s);
+
+    if (strcmp(s2, "hello world!") != 0) {
+        printf("%s() err\n", __func__);
+        safeFree(s2);
+        return -1;
+    } else {
+        printf("%s() ok\n", __func__);
+        safeFree(s2);
+    }
+
+    return 0;
+}
+
+int test_my_toupper() {
+    const char* s = "Hello World!";
+    char* s2 = my_toupper(s);
+
+    if (strcmp(s2, "HELLO WORLD!") != 0) {
+        printf("%s() err\n", __func__);
+        safeFree(s2);
+        return -1;
+    } else {
+        printf("%s() ok\n", __func__);
+        safeFree(s2);
+    }
+
+    return 0;
+}
+
 int test_my_string() {
     printf("------- %s() start -------\n", __func__);
     test_my_strlen();
@@ -86,6 +118,8 @@ int test_my_string() {
     test_my_strcpy();
     test_my_strcat();
     test_my_strtrim();
+    test_my_tolower();
+    test_my_toupper();
     printf("------- %s() end -------\n\n", __func__);
 
     return 0;

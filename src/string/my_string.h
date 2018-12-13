@@ -8,6 +8,12 @@ int my_strcmp(const char* s1, const char* s2);
 int my_strcpy(char* to, const char* from);
 int my_strcat(char* s1, const char* s2);
 
+ // tolower
+char* my_tolower(const char* s);
+
+// toupper
+char* my_toupper(const char* s);
+
 // is space tab etc.
 int my_isspace(char c);
 

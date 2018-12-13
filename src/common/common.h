@@ -19,4 +19,5 @@ void _safeFree(void** p);
  */
 char* getLine(void);
 // end input
+
 #endif // COMMON_H_INCLUDED

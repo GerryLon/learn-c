@@ -4,6 +4,8 @@
 #include "../common/common.h"
 
 #define OPS_LEN 128 // 128:ASCII码有效字符
+
+// 函数指针, 指向一个函数, 其参数为两个double, 返回值为double
 typedef double (*operation)(double, double);
 
 // 表示函数指针数组, 里边放的函数指针, 指针指向一个函数(两个double入参, 返回double)

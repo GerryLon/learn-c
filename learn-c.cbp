@@ -34,6 +34,38 @@
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="src/callback/str/str.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/callback/str/str.h" />
+		<Unit filename="src/callback/str/str_test.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/callback/str/str_test.h" />
+		<Unit filename="src/common/common.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/common/common.h" />
+		<Unit filename="src/common/common_test.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/common/common_test.h" />
+		<Unit filename="src/fptr/fprt_test.h" />
+		<Unit filename="src/fptr/fptr.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/fptr/fptr.h" />
+		<Unit filename="src/fptr/fptr_test.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/string/my_string.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/string/my_string.h" />
+		<Unit filename="src/string/my_string_test.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/string/my_string_test.h" />
 		<Extensions>
 			<code_completion />
 			<envvars />
