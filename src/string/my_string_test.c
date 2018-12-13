@@ -103,11 +103,22 @@ int test_my_toupper() {
         printf("%s() err\n", __func__);
         safeFree(s2);
         return -1;
-    } else {
-        printf("%s() ok\n", __func__);
-        safeFree(s2);
     }
 
+    printf("%s() ok\n", __func__);
+    safeFree(s2);
+    return 0;
+}
+
+int test_compareIgnoreCase() {
+    const char* s1 = "abc";
+    const char* s2 = "ABc";
+    if (compareIgnoreCase(s1, s2) != 0) {
+        printf("%s() err\n", __func__);
+        return -1;
+    }
+
+    printf("%s() ok\n", __func__);
     return 0;
 }
 
@@ -120,6 +131,7 @@ int test_my_string() {
     test_my_strtrim();
     test_my_tolower();
     test_my_toupper();
+    test_compareIgnoreCase();
     printf("------- %s() end -------\n\n", __func__);
 
     return 0;

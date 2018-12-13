@@ -10,6 +10,7 @@ int test_my_strcat();
 int test_my_strtrim();
 int test_my_tolower();
 int test_my_toupper();
+int test_compareIgnoreCase();
 
 int test_my_string();
 

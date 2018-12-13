@@ -177,3 +177,12 @@ char* my_strtrim(char* s) {
 
     return ret;
 }
+
+int compareIgnoreCase(const char* s1, const char* s2) {
+    char* _s1 = my_tolower(s1);
+    char* _s2 = my_tolower(s2);
+    int result = my_strcmp(_s1, _s2);
+    safeFree(_s1);
+    safeFree(_s2);
+    return result;
+}

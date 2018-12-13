@@ -19,4 +19,5 @@ int my_isspace(char c);
 
 // need free memory in outside
 char* my_strtrim(char* s);
+int compareIgnoreCase(const char* s1, const char* s2);
 #endif // _MYSTRING_H
