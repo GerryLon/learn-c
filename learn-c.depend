@@ -1,9 +1,10 @@
 # depslib dependency file v1.0
-1544708273 source:e:\workspace\c_cpp\learn-c\main.c
+1544713388 source:e:\workspace\c_cpp\learn-c\main.c
 	"src/common/common.h"
 	"src/string/my_string_test.h"
 	"src/common/common_test.h"
 	"src/fptr/fprt_test.h"
+	"src/callback/str/str_test.h"
 
 1544711719 e:\workspace\c_cpp\learn-c\src\common\common.h
 	<stdio.h>
@@ -14,7 +15,7 @@
 1544679942 source:e:\workspace\c_cpp\learn-c\src\common\common.c
 	"common.h"
 
-1544711397 source:e:\workspace\c_cpp\learn-c\src\string\my_string.c
+1544712942 source:e:\workspace\c_cpp\learn-c\src\string\my_string.c
 	"my_string.h"
 
 1544712460 e:\workspace\c_cpp\learn-c\src\string\my_string.h
@@ -45,7 +46,17 @@
 
 1544671921 e:\workspace\c_cpp\learn-c\src\fptr\fprt_test.h
 
-1544709012 source:e:\workspace\c_cpp\learn-c\src\callback\str\str.c
+1544713707 source:e:\workspace\c_cpp\learn-c\src\callback\str\str.c
+	"../../callback/str/str.h"
+	"../../string/my_string.h"
 
-1544709012 source:e:\workspace\c_cpp\learn-c\src\callback\str\str_test.c
+1544714580 source:e:\workspace\c_cpp\learn-c\src\callback\str\str_test.c
+	"../../string/my_string.h"
+	"../../callback/str/str.h"
+	"../../callback/str/str_test.h"
+
+1544713818 e:\workspace\c_cpp\learn-c\src\callback\str\str.h
+	"../../common/common.h"
+
+1544713335 e:\workspace\c_cpp\learn-c\src\callback\str\str_test.h
 
