@@ -1,15 +1,16 @@
 # depslib dependency file v1.0
-1544615296 source:e:\workspace\c_cpp\learn-c\main.c
+1544669239 source:e:\workspace\c_cpp\learn-c\main.c
 	"src/common/common.h"
 	"src/string/my_string_test.h"
+	"src/common/common_test.h"
 
-1544615310 e:\workspace\c_cpp\learn-c\src\common\common.h
+1544669196 e:\workspace\c_cpp\learn-c\src\common\common.h
 	<stdio.h>
 	<stdlib.h>
 	<unistd.h>
 	<string.h>
 
-1544615250 source:e:\workspace\c_cpp\learn-c\src\common\common.c
+1544669191 source:e:\workspace\c_cpp\learn-c\src\common\common.c
 	"common.h"
 
 1544615195 source:e:\workspace\c_cpp\learn-c\src\string\my_string.c
@@ -24,4 +25,10 @@
 1544615229 e:\workspace\c_cpp\learn-c\src\string\my_string_test.h
 	<string.h>
 	"my_string.h"
+
+1544669574 source:e:\workspace\c_cpp\learn-c\src\common\common_test.c
+	"common.h"
+	"common_test.h"
+
+1544668487 e:\workspace\c_cpp\learn-c\src\common\common_test.h
 

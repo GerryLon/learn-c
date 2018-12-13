@@ -6,6 +6,9 @@
 #include <unistd.h>
 #include <string.h>
 
-int max(int a, int b);
+// free memory safely
+void _safeFree(void** p);
+
+#define safeFree(p) _safeFree((void**)(&p))
 
 #endif // COMMON_H_INCLUDED
