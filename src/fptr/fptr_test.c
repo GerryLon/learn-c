@@ -19,7 +19,7 @@ int test_calc() {
 
     // 测试需要的数据
     // num1 op num2 = result
-    double arr[CASE_NUM][3] = {
+    double arr[OPS_LEN][3] = {
         {1, 1, 2}, // 1+1=2
         {10, 9, 1},
         {3, 7, 21},
@@ -34,6 +34,36 @@ int test_calc() {
         }
     }
     printf("test_calc() loop test op ok\n");
+
+    // set arr with +-*/
+    // char* symbols = "+-*/";
+    int symbols[] = {'+', '-', '*', '/'};
+
+    arr[symbols[0]][0] = 1;
+    arr[symbols[0]][1] = 1;
+    arr[symbols[0]][2] = 2;
+
+    arr[symbols[1]][0] = 13;
+    arr[symbols[1]][1] = 4;
+    arr[symbols[1]][2] = 9;
+
+    arr[symbols[2]][0] = 13;
+    arr[symbols[2]][1] = 2;
+    arr[symbols[2]][2] = 26;
+
+    arr[symbols[3]][0] = 12;
+    arr[symbols[3]][1] = 3;
+    arr[symbols[3]][2] = 4;
+
+    for (i = 0; i < CASE_NUM; i++) {
+        int code = symbols[i];
+        if ((int)calcBySymbol(code, arr[code][0], arr[code][1]) != (int)arr[code][2]) {
+            printf("test_calc() calcBySymbol() loop test op err, when %f%c%f\n",
+                   arr[code][0], code, arr[code][1]);
+            return -1;
+        }
+    }
+    printf("test_calc() calcBySymbol() loop test op ok\n");
 
     return 0;
 }
