@@ -4,6 +4,7 @@
 #include "../common/common.h"
 #include "ds.h"
 #include "linkedlist/linkedlist_test.h"
+#include "queue/queue_test.h"
 
 int test_ds();
 

@@ -66,6 +66,14 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="src/ds/linkedlist/linkedlist_test.h" />
+		<Unit filename="src/ds/queue/queue.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/ds/queue/queue.h" />
+		<Unit filename="src/ds/queue/queue_test.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/ds/queue/queue_test.h" />
 		<Unit filename="src/fptr/fprt_test.h" />
 		<Unit filename="src/fptr/fptr.c">
 			<Option compilerVar="CC" />

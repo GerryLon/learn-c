@@ -86,6 +86,42 @@ int deleteNode(LinkedList* l, Node* node) {
     return 0;
 }
 
+void* removeFirst(LinkedList* l) {
+    if (l == NULL || l->head == NULL) {
+        return NULL;
+    }
+
+    Node* tmpNode = l->head; // 保存头节点
+    l->head = l->head->next; // 重置头节点
+    Data* tmpData = (Data*)tmpNode->data;
+    safeFree(tmpNode);
+    return tmpData;
+}
+
+int getLinkedListCount(const LinkedList* l) {
+    int count = 0;
+    if (l == NULL || l->head == NULL) {
+        return 0;
+    }
+
+    // 头节点也包含有效数据
+    Node* tmpNode = l->head;
+
+    while (tmpNode != NULL) {
+        count++;
+        tmpNode = tmpNode->next;
+    }
+
+    return count;
+}
+
+int isListEmpty(const LinkedList* l) {
+    if (l == NULL || l->head == NULL) {
+        return 1; // empty
+    }
+    return 0;
+}
+
 Node* getNode(LinkedList* l, int (*compare)(const void* data1, const void* data2), const void* data) {
     if (l == NULL) {
         return NULL;

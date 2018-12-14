@@ -8,11 +8,21 @@ int test_ds_linkedlist() {
     Data* tmpData;
     initializeList(&list);
 
+    if (!isListEmpty(&list)) {
+        printf("%s() isListEmpty() err\n", __func__);
+        return -1;
+    }
+
     Data d1 = {
         .name = "hello",
         .id = 1
     };
     addTail(&list, &d1);
+
+    if (isListEmpty(&list)) {
+        printf("%s() isListEmpty() err\n", __func__);
+        return -1;
+    }
 
     Data d2 = {
         .name = "world",
@@ -33,6 +43,12 @@ int test_ds_linkedlist() {
         .id = 4
     };
     addTail(&list, &d4);
+
+    if (getLinkedListCount(&list) != 4) {
+        printf("%s() getLinkedListCount() err\n", __func__);
+        return -1;
+    }
+
     displayLinkedList(&list, (fptrDispayData)printData);
 
     tmpNode = getNode(&list, (fptrCompareData)compareData, &d2);
@@ -56,11 +72,11 @@ int test_ds_linkedlist() {
     displayLinkedList(&list, (fptrDispayData)printData);
     // -----------------------------------------
 
-
     Data d5 = {
         .name = "uk",
         .id = 0
     };
+    printf("%s() addHead()\n", __func__);
     addHead(&list, &d5);
     displayLinkedList(&list, (fptrDispayData)printData);
 

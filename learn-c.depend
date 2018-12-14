@@ -16,13 +16,13 @@
 1544679942 source:e:\workspace\c_cpp\learn-c\src\common\common.c
 	"common.h"
 
-1544712942 source:e:\workspace\c_cpp\learn-c\src\string\my_string.c
+1544776016 source:e:\workspace\c_cpp\learn-c\src\string\my_string.c
 	"my_string.h"
 
 1544712460 e:\workspace\c_cpp\learn-c\src\string\my_string.h
 	"../common/common.h"
 
-1544712916 source:e:\workspace\c_cpp\learn-c\src\string\my_string_test.c
+1544775344 source:e:\workspace\c_cpp\learn-c\src\string\my_string_test.c
 	"my_string.h"
 	"my_string_test.h"
 
@@ -61,33 +61,49 @@
 
 1544713335 e:\workspace\c_cpp\learn-c\src\callback\str\str_test.h
 
-1544757462 source:e:\workspace\c_cpp\learn-c\src\ds\ds.c
+1544772954 source:e:\workspace\c_cpp\learn-c\src\ds\ds.c
 	"../ds/ds.h"
 
-1544752721 source:e:\workspace\c_cpp\learn-c\src\ds\ds_test.c
+1544773268 source:e:\workspace\c_cpp\learn-c\src\ds\ds_test.c
 	"../ds/ds_test.h"
 
-1544761419 source:e:\workspace\c_cpp\learn-c\src\ds\linkedlist\linkedlist.c
+1544776933 source:e:\workspace\c_cpp\learn-c\src\ds\linkedlist\linkedlist.c
 	"../../ds/linkedlist/linkedlist.h"
 
-1544762055 source:e:\workspace\c_cpp\learn-c\src\ds\linkedlist\linkedlist_test.c
+1544774213 source:e:\workspace\c_cpp\learn-c\src\ds\linkedlist\linkedlist_test.c
 	"../../ds/linkedlist/linkedlist_test.h"
 
-1544752705 e:\workspace\c_cpp\learn-c\src\ds\ds_test.h
+1544773528 e:\workspace\c_cpp\learn-c\src\ds\ds_test.h
 	"../common/common.h"
 	"ds.h"
 	"linkedlist/linkedlist_test.h"
+	"queue/queue_test.h"
 
-1544761902 e:\workspace\c_cpp\learn-c\src\ds\ds.h
+1544771373 e:\workspace\c_cpp\learn-c\src\ds\ds.h
 	"../common/common.h"
-	"linkedlist/linkedlist_test.h"
 
 1544758829 e:\workspace\c_cpp\learn-c\src\ds\linkedlist\linkedlist_test.h
 	"../../common/common.h"
 	"../ds.h"
 	"linkedlist.h"
 
-1544761410 e:\workspace\c_cpp\learn-c\src\ds\linkedlist\linkedlist.h
+1544776734 e:\workspace\c_cpp\learn-c\src\ds\linkedlist\linkedlist.h
 	"../../common/common.h"
 	"../ds.h"
+
+1544777138 source:e:\workspace\c_cpp\learn-c\src\ds\queue\queue.c
+	"../../ds/queue/queue.h"
+
+1544777218 source:e:\workspace\c_cpp\learn-c\src\ds\queue\queue_test.c
+	"../../ds/queue/queue_test.h"
+
+1544777266 e:\workspace\c_cpp\learn-c\src\ds\queue\queue.h
+	"../../common/common.h"
+	"../ds.h"
+	"../linkedlist/linkedlist.h"
+
+1544773481 e:\workspace\c_cpp\learn-c\src\ds\queue\queue_test.h
+	"../../common/common.h"
+	"../ds.h"
+	"queue.h"
 

@@ -68,7 +68,7 @@ int test_my_strtrim() {
     char* s2 = my_strtrim(s);
 
     if (strcmp("a b", s2) != 0) {
-        printf("test_my_strtrim() err\n");
+        printf("%s() err\n", __func__);
         safeFree(s2);
         return -1;
     } else {

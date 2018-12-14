@@ -1,6 +1,6 @@
 #include "../ds/ds.h"
 
-// Ä¬ÈÏ±È½Ïid
+// compare data, default using id
 int compareData(const Data* d1, const Data* d2) {
     if (d1 == NULL || d2 == NULL) {
         printf("%s() arguments err\n", __func__);

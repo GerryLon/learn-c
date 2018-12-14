@@ -173,7 +173,7 @@ char* my_strtrim(char* s) {
     for (i = 0; i < finalLen; i++) {
         *(ret + i) = *(_s1 + i);
     }
-    *(ret + finalLen + 1) = '\0';
+    *(ret + finalLen) = '\0';
 
     return ret;
 }
