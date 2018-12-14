@@ -50,6 +50,22 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="src/common/common_test.h" />
+		<Unit filename="src/ds/ds.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/ds/ds.h" />
+		<Unit filename="src/ds/ds_test.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/ds/ds_test.h" />
+		<Unit filename="src/ds/linkedlist/linkedlist.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/ds/linkedlist/linkedlist.h" />
+		<Unit filename="src/ds/linkedlist/linkedlist_test.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/ds/linkedlist/linkedlist_test.h" />
 		<Unit filename="src/fptr/fprt_test.h" />
 		<Unit filename="src/fptr/fptr.c">
 			<Option compilerVar="CC" />

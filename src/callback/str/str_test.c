@@ -33,6 +33,6 @@ int test_callback__str() {
     }
     printf("%s() sortStrings() strings_compareIgnoreCase() ok\n", __func__);
 
-    printf("------- %s() end -------\n", __func__);
+    printf("------- %s() end -------\n\n", __func__);
     return 0;
 }
