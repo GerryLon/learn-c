@@ -12,43 +12,57 @@ int test_ds_linkedlist() {
         .name = "hello",
         .id = 1
     };
-    addHead(&list, &d1);
+    addTail(&list, &d1);
 
     Data d2 = {
         .name = "world",
         .id = 2
     };
-    addHead(&list, &d2);
+    addTail(&list, &d2);
 
     Data d3 = {
         .name = "china",
         .id = 3
     };
-    addHead(&list, &d3);
+    addTail(&list, &d3);
 
-    displayLinkedList(&list, (fprtDispayData)printData);
+    displayLinkedList(&list, (fptrDispayData)printData);
 
     Data d4 = {
         .name = "us",
         .id = 4
     };
-    addHead(&list, &d4);
-    displayLinkedList(&list, (fprtDispayData)printData);
+    addTail(&list, &d4);
+    displayLinkedList(&list, (fptrDispayData)printData);
 
-    tmpNode = getNode(&list, (fprtCompareData)compareData, &d2);
+    tmpNode = getNode(&list, (fptrCompareData)compareData, &d2);
     if (tmpNode == NULL) {
         printf("%s() getNode() err\n", __func__);
         return -1;
     }
     tmpData = (Data*)tmpNode->data;
+    if (tmpData->id == 2) {
+        printf("%s() getNode() ok\n", __func__);
+    } else {
+        printf("%s() getNode() err\n", __func__);
+        return -1;
+    }
 
     // ---------------------- test delete -------------------
     printf("start delete node: name=%s, id=%d\n", tmpData->name, tmpData->id);
 
     deleteNode(&list, tmpNode);
     printf("end delete node: name=%s, id=%d\n", tmpData->name, tmpData->id);
-    displayLinkedList(&list, (fprtDispayData)printData);
+    displayLinkedList(&list, (fptrDispayData)printData);
     // -----------------------------------------
+
+
+    Data d5 = {
+        .name = "uk",
+        .id = 0
+    };
+    addHead(&list, &d5);
+    displayLinkedList(&list, (fptrDispayData)printData);
 
     destroyLinkedList(&list);
     printf("------- %s() end -------\n\n", __func__);

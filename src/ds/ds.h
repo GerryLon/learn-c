@@ -4,8 +4,8 @@
 #include "../common/common.h"
 #include "linkedlist/linkedlist_test.h"
 
-typedef void (*fprtDispayData)(const void* data);
-typedef int(*fprtCompareData)(const void* d1, const void* d2);
+typedef void (*fptrDispayData)(const void* data);
+typedef int (*fptrCompareData)(const void* d1, const void* d2);
 
 // struct for test
 typedef struct _data {
