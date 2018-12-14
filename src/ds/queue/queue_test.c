@@ -51,11 +51,11 @@ int test_ds_queue() {
     displayQueue(&queue, (fptrDispayData)printData);
 
     while ((tmpData = (Data*)dequeue(&queue))) {
-        printf("%s() dequeue, name=%s, id=%d\n", __func__, tmpData->name, tmpData->id);
+        printf("%s() dequeue(), name=%s, id=%d\n", __func__, tmpData->name, tmpData->id);
     }
 
     if (!isQueueEmpty(&queue)) {
-        printf("%s() isQueueEmpty err\n", __func__);
+        printf("%s() isQueueEmpty() err\n", __func__);
     }
 
     printf("------- %s() end -------\n\n", __func__);

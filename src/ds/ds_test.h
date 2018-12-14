@@ -5,6 +5,7 @@
 #include "ds.h"
 #include "linkedlist/linkedlist_test.h"
 #include "queue/queue_test.h"
+#include "stack/stack_test.h"
 
 int test_ds();
 

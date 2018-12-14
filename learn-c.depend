@@ -64,7 +64,7 @@
 1544772954 source:e:\workspace\c_cpp\learn-c\src\ds\ds.c
 	"../ds/ds.h"
 
-1544773268 source:e:\workspace\c_cpp\learn-c\src\ds\ds_test.c
+1544778008 source:e:\workspace\c_cpp\learn-c\src\ds\ds_test.c
 	"../ds/ds_test.h"
 
 1544776933 source:e:\workspace\c_cpp\learn-c\src\ds\linkedlist\linkedlist.c
@@ -73,11 +73,12 @@
 1544774213 source:e:\workspace\c_cpp\learn-c\src\ds\linkedlist\linkedlist_test.c
 	"../../ds/linkedlist/linkedlist_test.h"
 
-1544773528 e:\workspace\c_cpp\learn-c\src\ds\ds_test.h
+1544778018 e:\workspace\c_cpp\learn-c\src\ds\ds_test.h
 	"../common/common.h"
 	"ds.h"
 	"linkedlist/linkedlist_test.h"
 	"queue/queue_test.h"
+	"stack/stack_test.h"
 
 1544771373 e:\workspace\c_cpp\learn-c\src\ds\ds.h
 	"../common/common.h"
@@ -94,7 +95,7 @@
 1544777138 source:e:\workspace\c_cpp\learn-c\src\ds\queue\queue.c
 	"../../ds/queue/queue.h"
 
-1544777218 source:e:\workspace\c_cpp\learn-c\src\ds\queue\queue_test.c
+1544778978 source:e:\workspace\c_cpp\learn-c\src\ds\queue\queue_test.c
 	"../../ds/queue/queue_test.h"
 
 1544777266 e:\workspace\c_cpp\learn-c\src\ds\queue\queue.h
@@ -106,4 +107,20 @@
 	"../../common/common.h"
 	"../ds.h"
 	"queue.h"
+
+1544777939 e:\workspace\c_cpp\learn-c\src\ds\stack\stack_test.h
+	"../../common/common.h"
+	"../ds.h"
+	"stack.h"
+
+1544779046 e:\workspace\c_cpp\learn-c\src\ds\stack\stack.h
+	"../../common/common.h"
+	"../ds.h"
+	"../linkedlist/linkedlist.h"
+
+1544778929 source:e:\workspace\c_cpp\learn-c\src\ds\stack\stack.c
+	"stack.h"
+
+1544778906 source:e:\workspace\c_cpp\learn-c\src\ds\stack\stack_test.c
+	"../../ds/stack/stack_test.h"
 
