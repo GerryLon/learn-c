@@ -18,7 +18,7 @@ int test_ds_tree() {
 
     Data d2 = {
         .name = "java",
-        .id = 2
+        .id = 10
     };
     if ((ret = insertNode(&bstTree, compareFn, &d2)) != 0) {
         return ret;

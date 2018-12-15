@@ -18,7 +18,8 @@ int insertNode(TreeNode** root, fptrCompareData compare, void* data) {
         return 0;
     }
 
-    // TreeNode** tmpNode = root;
+    // save root temporarily
+    TreeNode* tmpRoot = *root;
 
     while (1) {
         if (compare(data, (*root)->data) < 0) {
@@ -37,6 +38,9 @@ int insertNode(TreeNode** root, fptrCompareData compare, void* data) {
             }
         }
     }
+
+    // reset root
+    *root = tmpRoot;
     return 0;
 }
 
