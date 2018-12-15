@@ -52,3 +52,21 @@ int preOrderTraverse(const TreeNode* root, fptrDispayData display) {
     }
     return 0;
 }
+
+int inOrderTraverse(const TreeNode* root, fptrDispayData display) {
+    if (root != NULL) {
+        inOrderTraverse(root->left, display);
+        display(root->data);
+        inOrderTraverse(root->right, display);
+    }
+    return 0;
+}
+
+int postOrderTraverse(const TreeNode* root, fptrDispayData display) {
+    if (root != NULL) {
+        postOrderTraverse(root->left, display);
+        postOrderTraverse(root->right, display);
+        display(root->data);
+    }
+    return 0;
+}
