@@ -11,8 +11,8 @@ int printfWithTime(const char* format, ...) {
     getTimeLocal(timeBuf);
 
     // call printf indirectly
-    int (*fptrInderect)(const char*, ...) = printf;
-    fptrInderect("[LOG] %s:", timeBuf); // add time before user's printf
+    int (*fptrIndirect)(const char*, ...) = printf;
+    fptrIndirect("[LOG] %s:", timeBuf); // add time before user's printf
     result = vprintf(format, args);
     printf("\n");
     va_end(args);
