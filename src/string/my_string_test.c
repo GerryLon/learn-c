@@ -1,7 +1,7 @@
 #include "my_string.h"
 #include "my_string_test.h"
 
-int test_my_strlen() {
+static int test_my_strlen() {
     const char *s = "abcd";
 
     int expected = strlen(s);
@@ -17,7 +17,7 @@ int test_my_strlen() {
     return 0;
 }
 
-int test_my_strcmp() {
+static int test_my_strcmp() {
     const char* s1 = "abc";
     const char* s2 = "abd";
 
@@ -33,7 +33,7 @@ int test_my_strcmp() {
     return 0;
 }
 
-int test_my_strcpy() {
+static int test_my_strcpy() {
     const char *from = "abcd";
     char to[10];
 
@@ -48,7 +48,7 @@ int test_my_strcpy() {
     return 0;
 }
 
-int test_my_strcat() {
+static int test_my_strcat() {
     char s1[20] = "abc";
     const char* s2 = "hello";
 
@@ -63,7 +63,7 @@ int test_my_strcat() {
     return 0;
 }
 
-int test_my_strtrim() {
+static int test_my_strtrim() {
     char* s = "  a b ";
     char* s2 = my_strtrim(s);
 
@@ -79,7 +79,7 @@ int test_my_strtrim() {
     return 0;
 }
 
-int test_my_tolower() {
+static int test_my_tolower() {
     const char* s = "Hello World!";
     char* s2 = my_tolower(s);
 
@@ -95,7 +95,7 @@ int test_my_tolower() {
     return 0;
 }
 
-int test_my_toupper() {
+static int test_my_toupper() {
     const char* s = "Hello World!";
     char* s2 = my_toupper(s);
 
@@ -110,7 +110,7 @@ int test_my_toupper() {
     return 0;
 }
 
-int test_compareIgnoreCase() {
+static int test_compareIgnoreCase() {
     const char* s1 = "abc";
     const char* s2 = "ABc";
     if (compareIgnoreCase(s1, s2) != 0) {

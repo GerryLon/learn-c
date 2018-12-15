@@ -1,7 +1,7 @@
 #include "common.h"
 #include "common_test.h"
 
-int test_safeFree() {
+static int test_safeFree() {
     int *pi;
     pi = (int*)malloc(sizeof(int));
     *pi = 5;
@@ -24,7 +24,7 @@ int test_safeFree() {
     return 0;
 }
 
-int test_getLine() {
+static int test_getLine() {
     printf("please input \"abc\": ");
     char* line = getLine();
     printf("what you input is: %s\n", line);
@@ -41,7 +41,7 @@ int test_getLine() {
     return 0;
 }
 
-int test_getTimeLocal() {
+static int test_getTimeLocal() {
     char buf[32];
     getTimeLocal(buf);
     printf("%s(), now is: %s\n", __func__, buf);

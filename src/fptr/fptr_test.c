@@ -1,9 +1,9 @@
 #include "fptr.h"
-#include "fprt_test.h"
+#include "fptr_test.h"
 
 #define CASE_NUM 4
 
-int test_calc() {
+static int test_calc() {
     operation op = add;
 
     double result = calc(op, 1, 2);
