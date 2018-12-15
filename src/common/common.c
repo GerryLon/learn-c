@@ -61,9 +61,9 @@ int getTimeLocal(char* timeBuf) {
     time(&t); // get UNIX timestamp
     lt = localtime(&t); // to time struct
     // strftime (timeBuf, 32, "%Y-%m-%d %H:%M:%S", lt);
-    sprintf(timeBuf, "%4d-%2d-%2d %2d:%2d:%02d",
+    sprintf(timeBuf, "%4d-%02d-%02d %02d:%02d:%02d",
                lt->tm_year+1900,
-               lt->tm_mon,
+               lt->tm_mon + 1,
                lt->tm_mday,
                lt->tm_hour,
                lt->tm_min,
