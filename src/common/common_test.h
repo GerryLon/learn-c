@@ -4,6 +4,7 @@
 
 int test_safeFree();
 int test_getLine();
+int test_getTimeLocal();
 
 int test_common();
 

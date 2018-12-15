@@ -41,9 +41,17 @@ int test_getLine() {
     return 0;
 }
 
+int test_getTimeLocal() {
+    char buf[32];
+    getTimeLocal(buf);
+    printf("%s(), now is: %s\n", __func__, buf);
+    return 0;
+}
+
 int test_common() {
     printf("------- %s() start -------\n", __func__);
     test_safeFree();
+    test_getTimeLocal();
     printf("------- %s() end -------\n\n", __func__);
     // test_getLine();
     return 0;

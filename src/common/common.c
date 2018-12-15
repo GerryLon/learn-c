@@ -54,3 +54,20 @@ char* getLine(void) {
     *currPos = '\0';
     return buffer;
 }
+
+int getTimeLocal(char* timeBuf) {
+    time_t t;
+    struct tm* lt;
+    time(&t); // get UNIX timestamp
+    lt = localtime(&t); // to time struct
+    // strftime (timeBuf, 32, "%Y-%m-%d %H:%M:%S", lt);
+    sprintf(timeBuf, "%4d-%2d-%2d %2d:%2d:%02d",
+               lt->tm_year+1900,
+               lt->tm_mon,
+               lt->tm_mday,
+               lt->tm_hour,
+               lt->tm_min,
+               lt->tm_sec);
+
+    return 0;
+}

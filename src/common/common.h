@@ -5,6 +5,7 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <string.h>
+#include <time.h>
 
 // free memory safely
 void _safeFree(void** p);
@@ -19,5 +20,9 @@ void _safeFree(void** p);
  */
 char* getLine(void);
 // end input
+
+// char buf[32];
+// getTimeLocal(buf);
+int getTimeLocal(char* timeBuf);
 
 #endif // COMMON_H_INCLUDED
