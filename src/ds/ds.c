@@ -17,5 +17,7 @@ int compareData(const Data* d1, const Data* d2) {
 }
 
 void printData(const Data* d) {
-    printf("name: %s, id: %d\n", d->name, d->id);
+    if (d != NULL) {
+        printf("name: %s, id: %d\n", d->name, d->id);
+    }
 }

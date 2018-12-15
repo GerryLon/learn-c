@@ -3,7 +3,6 @@
 int initializeList(LinkedList* l) {
     l->head = NULL;
     l->tail = NULL;
-    l->curr = NULL;
     return 0;
 }
 

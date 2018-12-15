@@ -13,7 +13,6 @@ typedef struct _node {
 typedef struct _linkedlist {
     Node* head;
     Node* tail;
-    Node* curr;
 } LinkedList;
 
 int initializeList(LinkedList* l);
