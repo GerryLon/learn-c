@@ -83,6 +83,21 @@ static int test_my_strchr() {
     return 0;
 }
 
+static int test_my_strstr() {
+    const char* s1 = "hello=world";
+    const char* s2 = "hello";
+    char* index = my_strstr(s1, s2);
+
+    if (strcmp(index, "hello=world") != 0) {
+        printf("%s() err\n", __func__);
+        return -1;
+    } else {
+        printf("%s() ok\n", __func__);
+    }
+
+    return 0;
+}
+
 static int test_my_strtrim() {
     char* s = "  a b ";
     char* s2 = my_strtrim(s);
@@ -149,6 +164,7 @@ int test_my_string() {
     test_my_strcpy();
     test_my_strcat();
     test_my_strchr();
+    test_my_strstr();
     test_my_strtrim();
     test_my_tolower();
     test_my_toupper();

@@ -60,6 +60,23 @@ char* my_strchr(const char* s, const char c) {
     return NULL;
 }
 
+char* my_strstr(const char* s1, const char* s2) {
+    const int len2 = strlen(s2);
+    if (!len2) {
+        return NULL;
+    }
+
+    char* old = (char*)s1;
+    while (*old) {
+        if (*old == *s2 && strncmp(s1, s2, len2) == 0) {
+            return old;
+        }
+        old++;
+    }
+
+    return NULL;
+}
+
 // s1 > s2: 1
 // s1 == s2: 0
 // s1 < s2: -1
