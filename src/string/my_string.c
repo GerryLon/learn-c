@@ -43,6 +43,23 @@ int my_strcat(char* dest, const char* src) {
     return 0;
 }
 
+char* my_strchr(const char* s, const char c) {
+    if (s == NULL) {
+        return NULL;
+    }
+
+    char* old = (char*)s;
+
+    while (*old != '\0') {
+        if (*old == c) {
+            return old;
+        }
+        old++;
+    }
+
+    return NULL;
+}
+
 // s1 > s2: 1
 // s1 == s2: 0
 // s1 < s2: -1
