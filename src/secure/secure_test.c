@@ -30,6 +30,6 @@ int test_secure() {
     printf("%s() start\n", __func__);
     test_printfWithTime();
     test_restrict_add();
-    printf("%s() end\n", __func__);
+    printf("%s() end\n\n", __func__);
     return 0;
 }
