@@ -16,4 +16,5 @@ int insertNode(TreeNode** root, fptrCompareData compare, void* data);
 int preOrderTraverse(const TreeNode* root, fptrDispayData display);
 int inOrderTraverse(const TreeNode* root, fptrDispayData display);
 int postOrderTraverse(const TreeNode* root, fptrDispayData display);
+int destroyTree(TreeNode* root);
 #endif // _DS__TREE_H

@@ -66,6 +66,7 @@ printf("/*\n\
     postOrderTraverse(bstTree, displayFn);
     printf("%s() postOrderTraverse() end\n\n", __func__);
 
+    destroyTree(bstTree);
     printf("------- %s() end -------\n", __func__);
     return 0;
 }

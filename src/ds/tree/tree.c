@@ -70,3 +70,12 @@ int postOrderTraverse(const TreeNode* root, fptrDispayData display) {
     }
     return 0;
 }
+
+int destroyTree(TreeNode* root) {
+    if (root != NULL) {
+        destroyTree(root->left);
+        destroyTree(root->right);
+        safeFree(root);
+    }
+    return 0;
+}
