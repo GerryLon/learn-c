@@ -1,5 +1,5 @@
-#ifndef _MEMWATCH_MY_MEMWATCH_h
-#define _MEMWATCH_MY_MEMWATCH_h
+#ifndef _MEMWATCH_MY_MEMWATCH_H
+#define _MEMWATCH_MY_MEMWATCH_H
 
 #ifdef MY_MEMWATCH // set -DMY_MEMWATCH when compile
 

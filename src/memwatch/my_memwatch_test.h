@@ -1,5 +1,5 @@
-#ifndef _MEMWATCH_MY_MEMWATCH_h
-#define _MEMWATCH_MY_MEMWATCH_h
+#ifndef _MEMWATCH_MY_MEMWATCH_H
+#define _MEMWATCH_MY_MEMWATCH_H
 
 #include "../common/common.h"
 #include "my_memwatch.h"

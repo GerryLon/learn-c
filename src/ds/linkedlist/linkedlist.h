@@ -3,7 +3,7 @@
 #include "../../common/common.h"
 #include "../ds.h"
 
-// 单链表定义
+// 单链表定义, 头节点也带有效数据
 
 typedef struct _node {
     void* data;
@@ -20,6 +20,12 @@ int addHead(LinkedList* l, void* data);
 int addTail(LinkedList* l, void* data);
 int deleteNode(LinkedList* l, Node* pNode);
 void* removeFirst(LinkedList* l); // 删除第一个节点， 返回其中的数据
+
+/**
+ * 反转链表, 在函数内部修改list->head的值
+ */
+int reverseLinkedList(LinkedList* list);
+
 int getLinkedListCount(const LinkedList* l); // 获取其中有效节点（包含实际数据节点）的个数
 int isListEmpty(const LinkedList* l); // 其中有效节点是否为0个
 

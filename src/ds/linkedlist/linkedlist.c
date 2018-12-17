@@ -97,6 +97,25 @@ void* removeFirst(LinkedList* l) {
     return tmpData;
 }
 
+int reverseLinkedList(LinkedList* list) {
+    Node* prev = NULL;
+    Node* next = NULL;
+
+    Node* curr = list->head;
+
+    while (curr != NULL) {
+        next = curr->next; // 缓存要处理的下一个节点
+
+        curr->next = prev; // 反转
+        prev = curr;
+
+        curr = next; // 指向下一个节点
+    }
+
+    list->head = prev;
+    return 0;
+}
+
 int getLinkedListCount(const LinkedList* l) {
     int count = 0;
     if (l == NULL || l->head == NULL) {

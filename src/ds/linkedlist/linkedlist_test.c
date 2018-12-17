@@ -1,5 +1,11 @@
 #include "../../ds/linkedlist/linkedlist_test.h"
 
+static void printDataIdOnly(const Data* d) {
+    if (d != NULL) {
+        printf("%d ", d->id);
+    }
+}
+
 int test_ds_linkedlist() {
     printf("------- %s() start -------\n", __func__);
 
@@ -78,7 +84,14 @@ int test_ds_linkedlist() {
     };
     printf("%s() addHead()\n", __func__);
     addHead(&list, &d5);
+    // now data is 0, 1, 3, 4
     displayLinkedList(&list, (fptrDispayData)printData);
+
+    printf("%s() before reverseLinkedList()\n", __func__);
+    reverseLinkedList(&list);
+    displayLinkedList(&list, (fptrDispayData)printDataIdOnly);
+    printf("\n");
+    printf("%s() after reverseLinkedList()\n", __func__);
 
     destroyLinkedList(&list);
     printf("------- %s() end -------\n\n", __func__);

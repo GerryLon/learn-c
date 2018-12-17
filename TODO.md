@@ -1,1 +1,1 @@
-* free memory for tree
+more methods for tree
