@@ -7,14 +7,6 @@
 #include "src/secure/secure_test.h"
 #include "src/memwatch/my_memwatch_test.h"
 
-void test() {
-    char *pc = (char*)malloc(6);
-    int i = 0;
-    for (i = 0; i < 8; i++) {
-        pc[i] = 0;
-    }
-}
-
 int main() {
     test_common();
     test_my_string();

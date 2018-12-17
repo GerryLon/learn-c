@@ -7,6 +7,11 @@
 #include <string.h>
 #include <time.h>
 
+// set -DMEMWATCH -DMW_STDIO when compile
+#if defined(MEMWATCH) && defined(MW_STDIO)
+#include "../vendor/mw271/memwatch.h"
+#endif // defined
+
 // free memory safely
 void _safeFree(void** p);
 

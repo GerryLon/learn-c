@@ -24,7 +24,11 @@ static int test_safeFree() {
     return 0;
 }
 
-static int test_getLine() {
+// skip means just skip test
+static int test_getLine(int skip) {
+    if (skip) {
+        return 0;
+    }
     printf("please input \"abc\": ");
     char* line = getLine();
     printf("what you input is: %s\n", line);
@@ -53,6 +57,6 @@ int test_common() {
     test_safeFree();
     test_getTimeLocal();
     printf("------- %s() end -------\n\n", __func__);
-    // test_getLine();
+    test_getLine(1);
     return 0;
 }

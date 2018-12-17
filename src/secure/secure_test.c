@@ -26,10 +26,23 @@ static int test_restrict_add() {
     return 0;
 }
 
+static int test_memory_leak() {
+    char* p = (char* )malloc(100 * sizeof(char));
+    if (p == NULL) {
+        return -1;
+    }
+    strcpy(p, "hello world!");
+    if (p != NULL) {
+        free(p);
+    }
+    return 0;
+}
+
 int test_secure() {
     printf("%s() start\n", __func__);
     test_printfWithTime();
     test_restrict_add();
+    test_memory_leak();
     printf("%s() end\n\n", __func__);
     return 0;
 }

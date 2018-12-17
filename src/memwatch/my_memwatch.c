@@ -1,4 +1,5 @@
 #include "../memwatch/my_memwatch.h"
+#include "../common/common.h"
 
 void* my_malloc(unsigned int size, const char* file, int line) {
     printf("malloc() in file: %s, line: %d\n", file, line);

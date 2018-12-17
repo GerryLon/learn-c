@@ -1,4 +1,4 @@
-#define MY_MEMWATCH 1
+// #define MY_MEMWATCH 1
 
 #include "../common/common.h"
 #include "../memwatch/my_memwatch.h"
