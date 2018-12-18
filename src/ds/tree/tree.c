@@ -36,6 +36,8 @@ int insertNode(TreeNode** root, fptrCompareData compare, void* data) {
             } else {
                 (*root) = (*root)->right;
             }
+        } else {
+            return -2; // 数据一致, 不更新, 直接返回
         }
     }
 
