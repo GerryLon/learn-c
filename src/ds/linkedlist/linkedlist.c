@@ -1,51 +1,45 @@
 #include "../../ds/linkedlist/linkedlist.h"
 
 int initializeList(LinkedList* l) {
-    l->head = NULL;
-    l->tail = NULL;
+    Node* node = calloc(1, sizeof(Node));
+    l->tail = node;
+    l->tail->next = NULL;
+
+    node = calloc(1, sizeof(Node));
+    l->head = node;
+    l->head->next = l->tail;
+
+    l->length = 0;
     return 0;
 }
 
 //
 int addHead(LinkedList* l, void* data) {
     Node* node = (Node*)malloc(sizeof(Node));
-    if (node == NULL) {
-        printf("%s() malloc() err\n", __func__);
-        return -1;
-    }
+    assert(node != NULL);
     node->data = data;
 
-    // 如果head为空
-    if (l->head == NULL) {
-        l->tail = node; // 尾节点也是node
-        node->next = NULL;
-    } else {
-        node->next = l->head;
-    }
-
-    // 无论如何, head都指向node
-    l->head = node;
-
+    node->next = l->head->next;
+    l->head->next = node;
+    l->length++;
     return 0;
 }
 
 int addTail(LinkedList* l, void* data) {
     Node* node = (Node*)malloc(sizeof(Node));
-    if (node == NULL) {
-        printf("%s() malloc() err\n", __func__);
-        return -1;
-    }
+    assert(node != NULL);
+
     node->data = data;
-    node->next = NULL; // node作为尾节点，next是NULL
+    node->next = l->tail; // node作为尾节点，next是l->tail
 
-    if (l->head == NULL) {
-        l->head = node;
-    } else {
-        l->tail->next = node;
+    // prior of tail
+    Node* tmp = getNodeByIndex(l, getLinkedListCount(l) - 1);
+    if (tmp != NULL) {
+        tmp->next = node;
+    } else { // list empty
+        l->head->next = node;
     }
-
-    // 无论如何, tail都指向node
-    l->tail = node;
+    l->length++;
     return 0;
 }
 
@@ -86,58 +80,48 @@ int deleteNode(LinkedList* l, Node* node) {
 }
 
 void* removeFirst(LinkedList* l) {
-    if (l == NULL || l->head == NULL) {
+    assert(l != NULL);
+
+    if (isListEmpty(l)) {
         return NULL;
     }
 
-    Node* tmpNode = l->head; // 保存头节点
-    l->head = l->head->next; // 重置头节点
-    Data* tmpData = (Data*)tmpNode->data;
-    safeFree(tmpNode);
+    Node* first = l->head->next;
+    Data* tmpData = (Data*)first->data;
+
+    l->head->next = first->next;
+    l->length--;
+    safeFree(first);
     return tmpData;
 }
 
 int reverseLinkedList(LinkedList* list) {
-    Node* prev = NULL;
+    Node* curr = list->head->next;
+    Node* prev = list->head;
     Node* next = NULL;
 
-    Node* curr = list->head;
-
     while (curr != NULL) {
-        next = curr->next; // 缓存要处理的下一个节点
+        next = curr->next; // 保存当前的next值
+        curr->next = prev; // 当前next指向前一个, 即反转
 
-        curr->next = prev; // 反转
         prev = curr;
-
-        curr = next; // 指向下一个节点
+        curr = next;
     }
 
+    list->tail = list->head;
+    list->tail->next = NULL;
+
     list->head = prev;
+
     return 0;
 }
 
 int getLinkedListCount(const LinkedList* l) {
-    int count = 0;
-    if (l == NULL || l->head == NULL) {
-        return 0;
-    }
-
-    // 头节点也包含有效数据
-    Node* tmpNode = l->head;
-
-    while (tmpNode != NULL) {
-        count++;
-        tmpNode = tmpNode->next;
-    }
-
-    return count;
+    return l->length;
 }
 
 int isListEmpty(const LinkedList* l) {
-    if (l == NULL || l->head == NULL) {
-        return 1; // empty
-    }
-    return 0;
+    return getLinkedListCount(l) == 0 ? 1 : 0;
 }
 
 Node* getNode(LinkedList* l, int (*compare)(const void* data1, const void* data2), const void* data) {
@@ -145,8 +129,8 @@ Node* getNode(LinkedList* l, int (*compare)(const void* data1, const void* data2
         return NULL;
     }
 
-    Node* tmpNode = l->head;
-    while (tmpNode != NULL) {
+    Node* tmpNode = l->head->next;
+    while (tmpNode != l->tail) {
         if (compare(tmpNode->data, data) == 0) {
             return tmpNode;
         }
@@ -156,15 +140,26 @@ Node* getNode(LinkedList* l, int (*compare)(const void* data1, const void* data2
     return NULL;
 }
 
-int displayLinkedList(const LinkedList* l, void (*display)(const void* data)) {
-    printf("%s() start\n", __func__);
-    if (l == NULL) {
-        printf("%s() list is empty!\n", __func__);
+Node* getNodeByIndex(const LinkedList* const list, int index) {
+    int len = getLinkedListCount(list);
+    if (index < 0 || index >= len) {
         return NULL;
     }
+    int i;
+    Node* tmp;
+    for (i = 0, tmp = list->head->next; i < index; tmp = tmp->next, i++) {
+        ;
+    }
 
-    Node* tmpNode = l->head;
-    while(tmpNode != NULL) {
+    return tmp;
+}
+
+int displayLinkedList(const LinkedList* l, void (*display)(const void* data)) {
+    printf("%s() start\n", __func__);
+    assert(l != NULL);
+
+    Node* tmpNode = l->head->next;
+    while(tmpNode != l->tail) {
         display(tmpNode->data);
         tmpNode = tmpNode->next;
     }

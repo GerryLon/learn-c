@@ -3,7 +3,7 @@
 #include "../../common/common.h"
 #include "../ds.h"
 
-// 单链表定义, 头节点也带有效数据
+// 单链表定义, 头节点为哨兵节点，不带有有效数据
 
 typedef struct _node {
     void* data;
@@ -13,6 +13,7 @@ typedef struct _node {
 typedef struct _linkedlist {
     Node* head;
     Node* tail;
+    int length;
 } LinkedList;
 
 int initializeList(LinkedList* l);
@@ -22,7 +23,7 @@ int deleteNode(LinkedList* l, Node* pNode);
 void* removeFirst(LinkedList* l); // 删除第一个节点， 返回其中的数据
 
 /**
- * 反转链表, 在函数内部修改list->head的值
+ * 反转链表, 在函数内部修改list->head->next的值
  */
 int reverseLinkedList(LinkedList* list);
 
@@ -31,7 +32,7 @@ int isListEmpty(const LinkedList* l); // 其中有效节点是否为0个
 
 // 在l中寻找含有数据data的节点， 是否相等由compare计算 为0则相等， 否则不等
 Node* getNode(LinkedList* l, int (*compare)(const void* data1, const void* data2), const void* data);
-
+Node* getNodeByIndex(const LinkedList* const list, int index);
 // 输出整个链表， 由display决定如何输出
 int displayLinkedList(const LinkedList* l, void (*display)(const void* data));
 int destroyLinkedList(LinkedList* l);
