@@ -6,6 +6,7 @@
 #include <unistd.h>
 #include <string.h>
 #include <time.h>
+#include <assert.h>
 
 // set -DMEMWATCH -DMW_STDIO when compile
 #if defined(MEMWATCH) && defined(MW_STDIO)

@@ -6,13 +6,13 @@ static int test_my_strlen() {
 
     int expected = strlen(s);
     int actual = my_strlen(s);
-
-    if (actual != expected) {
-        fprintf(stderr, "test_my_strlen() err\n");
-        return -1;
-    } else {
-        fprintf(stdout, "test_my_strlen() ok\n");
-    }
+    assert(actual == expected);
+//    if (actual != expected) {
+//        fprintf(stderr, "test_my_strlen() err\n");
+//        return -1;
+//    } else {
+//        fprintf(stdout, "test_my_strlen() ok\n");
+//    }
 
     return 0;
 }
@@ -22,13 +22,13 @@ static int test_my_strcmp() {
     const char* s2 = "abd";
 
     int actual = my_strcmp(s1, s2);
-
-    if (actual >= 0) {
-        fprintf(stderr, "test_my_strcmp() err\n");
-        return -1;
-    } else {
-        fprintf(stdout, "test_my_strcmp() ok\n");
-    }
+    assert(actual < 0);
+//    if (actual >= 0) {
+//        fprintf(stderr, "test_my_strcmp() err\n");
+//        return -1;
+//    } else {
+//        fprintf(stdout, "test_my_strcmp() ok\n");
+//    }
 
     return 0;
 }
@@ -38,13 +38,13 @@ static int test_my_strcpy() {
     char to[10];
 
     my_strcpy(to, from);
-
-    if (strcmp(from, to) != 0) {
-        fprintf(stderr, "test_my_strcpy() err\n");
-        return -1;
-    } else {
-        fprintf(stdout, "test_my_strcpy() ok\n");
-    }
+    assert(strcmp(from, to) == 0);
+//    if (strcmp(from, to) != 0) {
+//        fprintf(stderr, "test_my_strcpy() err\n");
+//        return -1;
+//    } else {
+//        fprintf(stdout, "test_my_strcpy() ok\n");
+//    }
     return 0;
 }
 
@@ -53,13 +53,14 @@ static int test_my_strcat() {
     const char* s2 = "hello";
 
     my_strcat(s1, s2);
+    assert(strcmp(s1, "abchello") == 0);
 
-    if (strcmp(s1, "abchello") != 0) {
-        fprintf(stderr, "test_my_strcat() err\n");
-        return -1;
-    } else {
-        fprintf(stderr, "test_my_strcat() ok\n");
-    }
+//    if (strcmp(s1, "abchello") != 0) {
+//        fprintf(stderr, "test_my_strcat() err\n");
+//        return -1;
+//    } else {
+//        fprintf(stderr, "test_my_strcat() ok\n");
+//    }
     return 0;
 }
 
@@ -68,17 +69,19 @@ static int test_my_strchr() {
     char c = 'e';
     char* index = my_strchr(s, c);
 
-    if (index == NULL) {
-        printf("%s() err\n", __func__);
-        return -1;
-    }
+//    if (index == NULL) {
+//        printf("%s() err\n", __func__);
+//        return -1;
+//    }
+    assert(index != NULL);
+    assert(strncmp("ello", index, strlen(index)) == 0);
 
-    if (strncmp("ello", index, strlen(index)) != 0) {
-        printf("%s() err\n", __func__);
-        return -1;
-    } else {
-        printf("%s() ok\n", __func__);
-    }
+//    if (strncmp("ello", index, strlen(index)) != 0) {
+//        printf("%s() err\n", __func__);
+//        return -1;
+//    } else {
+//        printf("%s() ok\n", __func__);
+//    }
 
     return 0;
 }
@@ -88,12 +91,13 @@ static int test_my_strstr() {
     const char* s2 = "hello";
     char* index = my_strstr(s1, s2);
 
-    if (strcmp(index, "hello=world") != 0) {
-        printf("%s() err\n", __func__);
-        return -1;
-    } else {
-        printf("%s() ok\n", __func__);
-    }
+//    if (strcmp(index, "hello=world") != 0) {
+//        printf("%s() err\n", __func__);
+//        return -1;
+//    } else {
+//        printf("%s() ok\n", __func__);
+//    }
+    assert(strcmp(index, "hello=world") == 0);
 
     return 0;
 }
@@ -102,14 +106,15 @@ static int test_my_strtrim() {
     char* s = "  a b ";
     char* s2 = my_strtrim(s);
 
-    if (strcmp("a b", s2) != 0) {
-        printf("%s() err\n", __func__);
-        safeFree(s2);
-        return -1;
-    } else {
-        printf("test_my_strtrim() ok\n");
-        safeFree(s2);
-    }
+//    if (strcmp("a b", s2) != 0) {
+//        printf("%s() err\n", __func__);
+//        safeFree(s2);
+//        return -1;
+//    } else {
+//        printf("test_my_strtrim() ok\n");
+//        safeFree(s2);
+//    }
+    assert(strcmp("a b", s2) == 0);
 
     return 0;
 }
@@ -118,14 +123,15 @@ static int test_my_tolower() {
     const char* s = "Hello World!";
     char* s2 = my_tolower(s);
 
-    if (strcmp(s2, "hello world!") != 0) {
-        printf("%s() err\n", __func__);
-        safeFree(s2);
-        return -1;
-    } else {
-        printf("%s() ok\n", __func__);
-        safeFree(s2);
-    }
+//    if (strcmp(s2, "hello world!") != 0) {
+//        printf("%s() err\n", __func__);
+//        safeFree(s2);
+//        return -1;
+//    } else {
+//        printf("%s() ok\n", __func__);
+//        safeFree(s2);
+//    }
+    assert(strcmp(s2, "hello world!") == 0);
 
     return 0;
 }
@@ -134,13 +140,14 @@ static int test_my_toupper() {
     const char* s = "Hello World!";
     char* s2 = my_toupper(s);
 
-    if (strcmp(s2, "HELLO WORLD!") != 0) {
-        printf("%s() err\n", __func__);
-        safeFree(s2);
-        return -1;
-    }
-
-    printf("%s() ok\n", __func__);
+//    if (strcmp(s2, "HELLO WORLD!") != 0) {
+//        printf("%s() err\n", __func__);
+//        safeFree(s2);
+//        return -1;
+//    }
+//
+//    printf("%s() ok\n", __func__);
+    assert(strcmp(s2, "HELLO WORLD!") == 0);
     safeFree(s2);
     return 0;
 }
@@ -148,12 +155,13 @@ static int test_my_toupper() {
 static int test_compareIgnoreCase() {
     const char* s1 = "abc";
     const char* s2 = "ABc";
-    if (compareIgnoreCase(s1, s2) != 0) {
-        printf("%s() err\n", __func__);
-        return -1;
-    }
-
-    printf("%s() ok\n", __func__);
+//    if (compareIgnoreCase(s1, s2) != 0) {
+//        printf("%s() err\n", __func__);
+//        return -1;
+//    }
+//
+//    printf("%s() ok\n", __func__);
+    assert(compareIgnoreCase(s1, s2) == 0);
     return 0;
 }
 

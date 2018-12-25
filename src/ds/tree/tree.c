@@ -29,7 +29,7 @@ int insertNode(TreeNode** root, fptrCompareData compare, void* data) {
             } else {
                 (*root) = (*root)->left;
             }
-        } else {
+        } else if (compare(data, (*root)->data) > 0) {
             if ((*root)->right == NULL) {
                 (*root)->right = treeNode;
                 break;

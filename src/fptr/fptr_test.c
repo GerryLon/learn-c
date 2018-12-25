@@ -8,12 +8,13 @@ static int test_calc() {
 
     double result = calc(op, 1, 2);
     int i = 0;
-    if ((int)result != 3) {
-        printf("test_calc() add() err\n");
-        return -1;
-    } else {
-        printf("test_calc() add() ok\n");
-    }
+//    if ((int)result != 3) {
+//        printf("test_calc() add() err\n");
+//        return -1;
+//    } else {
+//        printf("test_calc() add() ok\n");
+//    }
+    assert((int)result == 3);
 
     operations ops = {add, minus, multiply, divide, NULL};
 
@@ -28,12 +29,13 @@ static int test_calc() {
 
     for (i = 0; i < CASE_NUM; i++) {
         op = ops[i]; // get op on position i, like add, minus etc.
-        if ((int)op(arr[i][0], arr[i][1]) != (int)arr[i][2]) {
-            printf("test_calc() loop test op err, i=%d\n", i);
-            return -1;
-        }
+//        if ((int)op(arr[i][0], arr[i][1]) != (int)arr[i][2]) {
+//            printf("test_calc() loop test op err, i=%d\n", i);
+//            return -1;
+//        }
+        assert((int)op(arr[i][0], arr[i][1]) == (int)arr[i][2]);
     }
-    printf("test_calc() loop test op ok\n");
+    // printf("test_calc() loop test op ok\n");
 
     // set arr with +-*/
     // char* symbols = "+-*/";
@@ -57,13 +59,14 @@ static int test_calc() {
 
     for (i = 0; i < CASE_NUM; i++) {
         int code = symbols[i];
-        if ((int)calcBySymbol(code, arr[code][0], arr[code][1]) != (int)arr[code][2]) {
-            printf("test_calc() calcBySymbol() loop test op err, when %f%c%f\n",
-                   arr[code][0], code, arr[code][1]);
-            return -1;
-        }
+//        if ((int)calcBySymbol(code, arr[code][0], arr[code][1]) != (int)arr[code][2]) {
+//            printf("test_calc() calcBySymbol() loop test op err, when %f%c%f\n",
+//                   arr[code][0], code, arr[code][1]);
+//            return -1;
+//        }
+        assert((int)calcBySymbol(code, arr[code][0], arr[code][1]) == (int)arr[code][2]);
     }
-    printf("test_calc() calcBySymbol() loop test op ok\n");
+    // printf("test_calc() calcBySymbol() loop test op ok\n");
 
     return 0;
 }

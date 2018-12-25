@@ -9,18 +9,20 @@ static int test_safeFree() {
     // printf("test_safeFree(), before: *p=%p\n", pi);
     safeFree(pi);
     // printf("test_safeFree(), after: *p=%p\n", pi);
-    if (pi == NULL) {
-        printf("test_safeFree() #1 ok\n");
-    } else {
-        printf("test_safeFree() #1 err\n");
-    }
+//    if (pi == NULL) {
+//        printf("test_safeFree() #1 ok\n");
+//    } else {
+//        printf("test_safeFree() #1 err\n");
+//    }
+    assert(pi == NULL);
     safeFree(pi);
 
-    if (pi == NULL) {
-        printf("test_safeFree() #2 ok\n");
-    } else {
-        printf("test_safeFree() #2 err\n");
-    }
+//    if (pi == NULL) {
+//        printf("test_safeFree() #2 ok\n");
+//    } else {
+//        printf("test_safeFree() #2 err\n");
+//    }
+    safeFree(pi);
     return 0;
 }
 
