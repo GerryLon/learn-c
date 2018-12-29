@@ -12,37 +12,26 @@ int test_ds_tree() {
         .name = "hello",
         .id = 5
     };
-    if ((ret = insertNode(&bstTree, compareFn, &d1)) != 0) {
-        printf("%s() insertNode() err, id=%d\n", __func__, d1.id);
-        return ret;
-    }
+    assert((ret = insertNode(&bstTree, compareFn, &d1)) == 0);
 
     Data d2 = {
         .name = "java",
         .id = 10
     };
-    if ((ret = insertNode(&bstTree, compareFn, &d2)) != 0) {
-        printf("%s() insertNode() err, id=%d\n", __func__, d2.id);
-        return ret;
-    }
+    assert((ret = insertNode(&bstTree, compareFn, &d2)) == 0);
 
     Data d3 = {
         .name = "php",
         .id = 3
     };
-    if ((ret = insertNode(&bstTree, compareFn, &d3)) != 0) {
-        printf("%s() insertNode() err, id=%d\n", __func__, d3.id);
-        return ret;
-    }
+    assert((ret = insertNode(&bstTree, compareFn, &d3)) == 0);
 
     Data d4 = {
         .name = "c",
         .id = 8
     };
-    if ((ret = insertNode(&bstTree, compareFn, &d4)) != 0) {
-        printf("%s() insertNode() err, id=%d\n", __func__, d4.id);
-        return ret;
-    }
+    assert((ret = insertNode(&bstTree, compareFn, &d4)) == 0);
+
 printf("/*\n\
         5\n\
        / \\\n\

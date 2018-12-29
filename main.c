@@ -6,6 +6,7 @@
 #include "src/ds/ds_test.h"
 #include "src/secure/secure_test.h"
 #include "src/memwatch/my_memwatch_test.h"
+#include "src/misc/linux_test.h"
 
 int main() {
     test_common();
@@ -16,5 +17,6 @@ int main() {
     test_secure();
     test_my_memwatch();
 
+    test_linux();
     return 0;
 }

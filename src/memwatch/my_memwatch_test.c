@@ -12,11 +12,11 @@ int test_my_memwatch() {
     }
 
     strcpy(p, "hello");
-    printf("%s() p=%s\n", __func__, p);
+    // printf("%s() p=%s\n", __func__, p);
 
     if (p != NULL) {
         free(p);
     }
-    printf("%s() end\n\n", __func__);
+    // printf("%s() end\n\n", __func__);
     return 0;
 }
