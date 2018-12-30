@@ -22,21 +22,24 @@
 	(type *)( (char *)ptr - offsetof(type,member) );})
 
 typedef struct Node {
-    char c;
+    double d;
     int i;
 } Node;
 
 int test_classic_macro() {
-    Node n = {
-        .c = 'w',
+	Node n = {
+        .d = 3.14,
         .i = 6,
     };
-    Node* pNode = NULL;
-    assert(offsetof(Node, c) == 0);
-    // printf("--------: %d\n", offsetof(Node, i));
 
-     // 由于内存对齐的原因， 这里偏移的其实是一个int的长度
-    assert(offsetof(Node, i) == sizeof(int));
+    Node* pNode = NULL;
+    // 成员i的偏移为一个double的长度, 以Node的定义为准
+    assert(offsetof(Node, i) == sizeof(double));
+    // d定义在Node中第一个位置, 所以偏移为0
+    assert(offsetof(Node, d) == 0);
+	// 事实上, 由于成员d偏移为0, 所以d的地址和n的地址一样
+	assert(&n.d == &n);
+	assert(&n.i == (char*)&n + sizeof(double));
 
     pNode = container_of(&n.i, Node, i);
     assert(pNode == &n);
@@ -46,11 +49,14 @@ int test_classic_macro() {
     assert(pNode == &n);
     assert(pNode->i == 6);
 
-    char tmp = 'a';
-    char* ptmp = &tmp;
+    assert(&n.i - 2 == &n);
+    // assert(&n.i - sizeof(double) == &n);
+
     // warning: initialization from incompatible pointer type [-Wincompatible-pointer-types]|
     // const typeof( ((type *)0)->member ) *__mptr = (ptr);
     // 上面const...这一句相当于将成员变量i对应类型,即int类型的指针赋值给ptmp, 所以类型不兼容
+    char tmp = 'a';
+    char* ptmp = &tmp;
     pNode = container_of(ptmp, Node, i);
     // assert(pNode == &n); // assert failed
 
