@@ -22,4 +22,8 @@ int my_isspace(char c);
 // need free memory in outside
 char* my_strtrim(char* s);
 int compareIgnoreCase(const char* s1, const char* s2);
+
+// brute force algorithm
+// pos start from 1
+int bf(const char* s, const char* t, int pos);
 #endif // _MYSTRING_H

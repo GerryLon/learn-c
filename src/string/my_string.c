@@ -77,6 +77,35 @@ char* my_strstr(const char* s1, const char* s2) {
     return NULL;
 }
 
+// brute force algorithm
+// pos start from 1
+int bf(const char* s, const char* t, int pos) {
+    int i = pos -1;
+    int j = 0;
+
+    const int len1 = strlen(s);
+    const int len2 = strlen(t);
+    if (pos < 1 || pos > len1 || pos - 1 + len2 > len1) {
+        return -2;
+    }
+
+    while (s[i] && t[j]) {
+        if (s[i] == t[j]) {
+            i++;
+            j++;
+        } else {
+            i = i - j + 1;
+            j = 0;
+        }
+    }
+
+    if (j >= len2) {
+        return i - len2;
+    }
+
+    return -1;
+}
+
 // s1 > s2: 1
 // s1 == s2: 0
 // s1 < s2: -1

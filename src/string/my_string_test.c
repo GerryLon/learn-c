@@ -165,6 +165,15 @@ static int test_compareIgnoreCase() {
     return 0;
 }
 
+static int test_bf() {
+    assert(bf("abcde", "abc", 1) == 0);
+    assert(bf("hello", "lo", 4) == 3);
+    assert(bf("fjlsd", "jflsfjlds", 1) == -2);
+    assert(bf("hello world", "world", 1) == 6);
+    assert(bf("abcdefghi", "abcdx", 1) == -1);
+    return 0;
+}
+
 int test_my_string() {
     printf("------- %s() start -------\n", __func__);
     test_my_strlen();
@@ -177,6 +186,7 @@ int test_my_string() {
     test_my_tolower();
     test_my_toupper();
     test_compareIgnoreCase();
+    test_bf();
     printf("------- %s() end -------\n\n", __func__);
 
     return 0;
