@@ -174,6 +174,16 @@ static int test_bf() {
     return 0;
 }
 
+static int testKMP() {
+    assert(KMP("abcde", "abc") == 0);
+    assert(KMP("abababca", "abababca") == 0);
+    assert(KMP("hello", "lo") == 3);
+    assert(KMP("fjlsd", "jflsfjlds") == -2);
+    assert(KMP("hello world", "world") == 6);
+    assert(KMP("abcdefghi", "abcdx") == -1);
+    return 0;
+}
+
 int test_my_string() {
     printf("------- %s() start -------\n", __func__);
     test_my_strlen();
@@ -187,6 +197,7 @@ int test_my_string() {
     test_my_toupper();
     test_compareIgnoreCase();
     test_bf();
+    testKMP();
     printf("------- %s() end -------\n\n", __func__);
 
     return 0;

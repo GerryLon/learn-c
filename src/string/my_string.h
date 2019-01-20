@@ -26,4 +26,6 @@ int compareIgnoreCase(const char* s1, const char* s2);
 // brute force algorithm
 // pos start from 1
 int bf(const char* s, const char* t, int pos);
+
+int KMP(const char* s, const char* t);
 #endif // _MYSTRING_H

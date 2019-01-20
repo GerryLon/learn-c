@@ -7,6 +7,7 @@
 #include "queue/queue_test.h"
 #include "stack/stack_test.h"
 #include "tree/tree_test.h"
+#include "sort/sort_test.h"
 
 int test_ds();
 

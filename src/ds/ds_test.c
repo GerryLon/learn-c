@@ -6,6 +6,7 @@ int test_ds() {
     test_ds_queue();
     test_ds_stack();
     test_ds_tree();
+    test_ds_sort();
     printf("------- %s() end -------\n", __func__);
     return 0;
 }

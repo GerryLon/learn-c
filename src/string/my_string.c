@@ -106,6 +106,52 @@ int bf(const char* s, const char* t, int pos) {
     return -1;
 }
 
+static int getNext(const char* t, int* next) {
+    next[0] = -1;
+    int i = 0;
+    int j = -1;
+    int len1 = strlen(t);
+
+    while (i < len1) {
+        if (j == -1 || t[i] == t[j]) {
+            i++;
+            j++;
+            next[i] = j;
+        } else {
+            j = next[j];
+        }
+    }
+    return 0;
+}
+
+int KMP(const char* s, const char* t) {
+    int i = 0;
+    int j = 0;
+    int len1 = strlen(s);
+    const int len2 = strlen(t);
+    int next[len2];
+
+    if (len2 > len1) {
+        return -2;
+    }
+
+    getNext(t, next);
+
+    while (i < len1 && j < len2) {
+        if (s[i] == t[j] || j == -1) {
+            i++;
+            j++;
+        } else {
+            j = next[j];
+        }
+    }
+
+    if (j == len2) {
+        return i - j;
+    }
+    return -1;
+}
+
 // s1 > s2: 1
 // s1 == s2: 0
 // s1 < s2: -1
